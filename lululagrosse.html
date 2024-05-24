@@ -77,8 +77,47 @@
         }
         .btn:hover {
             background-color: #b35717;
+		}
+			
+		#code-box {
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin: 20px auto;
+            width: 80%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
+        #code-box input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        #code-box button {
+            padding: 10px 20px;
+            background-color: #d2691e;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #code-box button:hover {
+            background-color: #b35717;
+        }
+		
+ 
     </style>
+	<script>
+        function checkCode() {
+            var code = document.getElementById("code-input").value;
+            if (code === "25g de farine") {
+                window.location.href = "viclegros.html";
+            } else {
+                alert("Code incorrect. Veuillez réessayer.");
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -86,7 +125,7 @@
             <h1>Recette de Gâteau au Chocolat</h1>
         </div>
         <p>Un délicieux gâteau au chocolat pour régaler toute la famille !</p>
-
+		
         <div class="image">
             <img src="https://assets.afcdn.com/recipe/20191023/101055_w3072h2304c1cx4287cy2857.jpg" alt="Gâteau au chocolat">
         </div>
@@ -117,6 +156,12 @@
                 <li>Laisser refroidir avant de démouler et déguster.</li>
             </ol>
         </div>
+		
+		<div id="code-box">
+			<label for="code-input">Entrez le code :</label>
+			<input type="text" id="code-input" placeholder="Code">
+			<button onclick="checkCode()">Valider</button>
+		</div>
 
         <div class="btn-container">
             <a href="index.html" class="btn">Retour à l'accueil</a>
