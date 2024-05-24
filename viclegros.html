@@ -9,6 +9,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             height: 100vh;
             margin: 0;
             font-family: Arial, sans-serif;
@@ -16,9 +17,14 @@
         }
         .container {
             text-align: center;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         .container img {
-            max-width: 300px;
+            max-width: 100%;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -52,6 +58,36 @@
         .social-links a:hover {
             background-color: #666;
         }
+        .quote {
+            margin-top: 30px;
+            font-size: 18px;
+            font-style: italic;
+            color: #555;
+        }
+        .contact-form {
+            margin-top: 30px;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .contact-form button:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
@@ -60,9 +96,20 @@
         <h1>Vic Le Gros</h1>
         <p>Vic Le Gros est un personnage emblématique de notre communauté, connu pour sa bonne humeur et son enthousiasme contagieux.</p>
         <div class="social-links">
-            <a href="https://www.facebook.com/VicLeGros" target="_blank">FB</a>
-            <a href="https://twitter.com/VicLeGros" target="_blank">TW</a>
-            <a href="https://www.instagram.com/VicLeGros" target="_blank">IG</a>
+            <a href="https://www.facebook.com/profile.php?id=61560234535026" target="_blank">FB</a>
+            <a href="https://x.com/vic_le_gros" target="_blank">TW</a>
+        </div>
+        <div class="quote">
+            <p>"Plus on bouffe, plus on est ouf." - Vic Le Gros</p>
+        </div>
+        <div class="contact-form">
+            <h2>Contactez Vic Le Gros</h2>
+            <form action="mailto:viclegros@example.com" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Votre nom">
+                <input type="email" name="email" placeholder="Votre email">
+                <textarea name="message" rows="4" placeholder="Votre message"></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
         </div>
     </div>
 </body>
