@@ -57,6 +57,25 @@
             height: auto;
             border-radius: 10px;
         }
+        .secret-message {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .secret-message input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .secret-message input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #d2691e;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
         footer {
             text-align: center;
             margin-top: 30px;
@@ -66,6 +85,19 @@
             color: #666;
         }
     </style>
+    <script>
+        function checkSecretMessage(event) {
+            event.preventDefault();
+            const secretInput = document.getElementById('secret-input').value;
+            const secretMessage = 'crêpe magique'; // Changez cette valeur selon votre besoin
+
+            if (secretInput === secretMessage) {
+                window.location.href = 'viclegros.html'; // Changez l'URL selon votre besoin
+            } else {
+                alert('Message secret incorrect. Veuillez réessayer.');
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -106,6 +138,15 @@
                 <li>Répétez l'opération avec le reste de la pâte.</li>
                 <li>Servez les crêpes chaudes avec les garnitures de votre choix : sucre, confiture, chocolat fondu, fruits, etc.</li>
             </ol>
+        </div>
+
+        <div class="secret-message">
+            <h2>Entrez le message secret :</h2>
+            <form onsubmit="checkSecretMessage(event)">
+                <input type="text" id="secret-input" placeholder="Entrez votre message secret">
+                <br>
+                <input type="submit" value="Valider">
+            </form>
         </div>
     </div>
     <footer>
