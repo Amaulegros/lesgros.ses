@@ -114,6 +114,23 @@
             width: 100%;
             bottom: 0;
         }
+        .btn-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        
     </style>
     <script>
         function checkCode() {
@@ -139,7 +156,7 @@
         </nav>
     </header>
     <div id="code-box">
-        <label for="code-input">Entrez le code :</label>
+        <label for="code-input">Code secret :</label>
         <input type="text" id="code-input" placeholder="Code">
         <button onclick="checkCode()">Valider</button>
     </div>
@@ -214,8 +231,11 @@
             <button type="submit">Envoyer</button>
         </form>
     </section>
-    <footer>
-        <p>&copy; 2024 Recettes Américaines. Tous droits réservés.</p>
-    </footer>
+    <div class="btn-container">
+        <a href="index.html" class="btn">Retour à l'accueil</a>
+    </div>
+    <div class="footer">
+        &copy; 2024 Recettes Gourmandes
+    </div>
 </body>
 </html>
