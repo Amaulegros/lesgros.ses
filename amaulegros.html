@@ -30,6 +30,32 @@
             color: white;
             text-decoration: none;
         }
+        #code-box {
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin: 20px auto;
+            width: 80%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        #code-box input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        #code-box button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #code-box button:hover {
+            background-color: #45a049;
+        }
         section {
             padding: 20px;
             margin: 20px auto;
@@ -43,15 +69,19 @@
         }
         article {
             margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
         }
         article img {
-            width: 400px; /* Taille réduite des images */
+            width: 200px;
             height: auto;
-            margin-right: 20px; /* Espace entre l'image et le texte */
+            margin-right: 20px;
         }
-        article ul, article ol {
-            margin: 10px 0;
-            padding: 0 20px;
+        article div {
+            flex: 1;
+        }
+        article h4 {
+            margin-top: 0;
         }
         form {
             display: flex;
@@ -85,6 +115,16 @@
             bottom: 0;
         }
     </style>
+    <script>
+        function checkCode() {
+            var code = document.getElementById("code-input").value;
+            if (code === "150g de beurre") {
+                window.location.href = "viclegros.html";
+            } else {
+                alert("Code incorrect. Veuillez réessayer.");
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -98,6 +138,11 @@
             </ul>
         </nav>
     </header>
+    <div id="code-box">
+        <label for="code-input">Entrez le code :</label>
+        <input type="text" id="code-input" placeholder="Code">
+        <button onclick="checkCode()">Valider</button>
+    </div>
     <section id="home">
         <h2>Bienvenue sur Recettes Américaines</h2>
         <p>Découvrez les meilleures recettes traditionnelles des États-Unis, des classiques du sud aux desserts décadents.</p>
@@ -105,48 +150,52 @@
     <section id="recipes">
         <h2>Nos Recettes</h2>
         <article>
-            <h3>Mac and Cheese</h3>
             <img src="https://assets.afcdn.com/story/20231005/2230784_w2000h1500c1cx1000cy667cxt0cyt0cxb2000cyb1333.jpg" alt="Mac and Cheese">
-            <h4>Ingrédients :</h4>
-            <ul>
-                <li>200g de macaroni</li>
-                <li>50g de beurre</li>
-                <li>50g de farine</li>
-                <li>500ml de lait</li>
-                <li>200g de cheddar râpé</li>
-                <li>Sel et poivre</li>
-            </ul>
-            <h4>Instructions :</h4>
-            <ol>
-                <li>Cuire les macaroni selon les instructions sur l'emballage.</li>
-                <li>Faire fondre le beurre dans une casserole, ajouter la farine et cuire 1 minute.</li>
-                <li>Ajouter le lait progressivement en fouettant jusqu'à épaississement.</li>
-                <li>Incorporer le cheddar râpé, assaisonner avec du sel et du poivre.</li>
-                <li>Ajouter les macaroni cuits à la sauce au fromage, bien mélanger et servir chaud.</li>
-            </ol>
+            <div>
+                <h3>Mac and Cheese</h3>
+                <h4>Ingrédients :</h4>
+                <ul>
+                    <li>200g de macaroni</li>
+                    <li>50g de beurre</li>
+                    <li>50g de farine</li>
+                    <li>500ml de lait</li>
+                    <li>200g de cheddar râpé</li>
+                    <li>Sel et poivre</li>
+                </ul>
+                <h4>Instructions :</h4>
+                <ol>
+                    <li>Cuire les macaroni selon les instructions sur l'emballage.</li>
+                    <li>Faire fondre le beurre dans une casserole, ajouter la farine et cuire 1 minute.</li>
+                    <li>Ajouter le lait progressivement en fouettant jusqu'à épaississement.</li>
+                    <li>Incorporer le cheddar râpé, assaisonner avec du sel et du poivre.</li>
+                    <li>Ajouter les macaroni cuits à la sauce au fromage, bien mélanger et servir chaud.</li>
+                </ol>
+            </div>
         </article>
         <article>
-            <h3>Apple Pie</h3>
             <img src="https://www.inspiredtaste.net/wp-content/uploads/2022/11/Apple-Pie-Recipe-Video.jpg" alt="Apple Pie">
-            <h4>Ingrédients :</h4>
-            <ul>
-                <li>1 pâte brisée</li>
-                <li>6 pommes</li>
-                <li>100g de sucre</li>
-                <li>1 cuillère à café de cannelle</li>
-                <li>2 cuillères à soupe de farine</li>
-                <li>1 cuillère à soupe de jus de citron</li>
-                <li>1 œuf battu (pour la dorure)</li>
-            </ul>
-            <h4>Instructions :</h4>
-            <ol>
-                <li>Préchauffer le four à 180°C.</li>
-                <li>Éplucher et couper les pommes en tranches fines, les mélanger avec le sucre, la cannelle, la farine et le jus de citron.</li>
-                <li>Étaler la pâte dans un moule à tarte, remplir avec le mélange de pommes.</li>
-                <li>Recouvrir d'une deuxième pâte, sceller les bords et badigeonner avec l'œuf battu.</li>
-                <li>Faire des petites incisions sur le dessus pour permettre à la vapeur de s'échapper.</li>
-                <li>Cuire au four pendant 45-50 minutes jusqu'à ce que la tarte soit dorée.</li>
-            </ol>
+            <div>
+                <h3>Apple Pie</h3>
+                <h4>Ingrédients :</h4>
+                <ul>
+                    <li>1 pâte brisée</li>
+                    <li>6 pommes</li>
+                    <li>100g de sucre</li>
+                    <li>1 cuillère à café de cannelle</li>
+                    <li>2 cuillères à soupe de farine</li>
+                    <li>1 cuillère à soupe de jus de citron</li>
+                    <li>1 œuf battu (pour la dorure)</li>
+                </ul>
+                <h4>Instructions :</h4>
+                <ol>
+                    <li>Préchauffer le four à 180°C.</li>
+                    <li>Éplucher et couper les pommes en tranches fines, les mélanger avec le sucre, la cannelle, la farine et le jus de citron.</li>
+                    <li>Étaler la pâte dans un moule à tarte, remplir avec le mélange de pommes.</li>
+                    <li>Recouvrir d'une deuxième pâte, sceller les bords et badigeonner avec l'œuf battu.</li>
+                    <li>Faire des petites incisions sur le dessus pour permettre à la vapeur de s'échapper.</li>
+                    <li>Cuire au four pendant 45-50 minutes jusqu'à ce que la tarte soit dorée.</li>
+                </ol>
+            </div>
         </article>
     </section>
     <section id="about">
