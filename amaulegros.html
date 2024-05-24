@@ -30,32 +30,6 @@
             color: white;
             text-decoration: none;
         }
-        #code-box {
-            background-color: #fff;
-            padding: 10px;
-            border: 1px solid #ddd;
-            margin: 20px auto;
-            width: 80%;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        #code-box input {
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            margin-right: 10px;
-        }
-        #code-box button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        #code-box button:hover {
-            background-color: #45a049;
-        }
         section {
             padding: 20px;
             margin: 20px auto;
@@ -67,78 +41,33 @@
             border-bottom: 2px solid #4CAF50;
             padding-bottom: 10px;
         }
-        article {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: flex-start;
-        }
-        article img {
-            width: 200px;
-            height: auto;
-            margin-right: 20px;
-        }
-        article div {
-            flex: 1;
-        }
-        article h4 {
-            margin-top: 0;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-        form label {
-            margin: 10px 0 5px;
-        }
-        form input, form textarea, form button {
+        .recipe {
+            border: 1px solid #ddd;
             padding: 10px;
             margin-bottom: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        form button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
             cursor: pointer;
         }
-        form button:hover {
-            background-color: #45a049;
+        .recipe-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+        .recipe-details {
+            display: none;
+            margin-top: 10px;
         }
-        .btn-container {
-            text-align: center;
-            margin-top: 40px;
+        .recipe img {
+            width: 200px;
+            height: auto;
         }
-        .btn {
-            background-color: #4CAF50;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1em;
-            transition: background-color 0.3s ease;
-        }
-        .btn:hover {
-            background-color: #45a049;
-        }
-        
     </style>
     <script>
-        function checkCode() {
-            var code = document.getElementById("code-input").value;
-            if (code === "150g de beurre") {
-                window.location.href = "viclegros.html";
+        function toggleDetails(element) {
+            var details = element.querySelector('.recipe-details');
+            if (details.style.display === 'none' || details.style.display === '') {
+                details.style.display = 'block';
             } else {
-                alert("Code incorrect. Veuillez réessayer.");
+                details.style.display = 'none';
             }
         }
     </script>
@@ -155,21 +84,22 @@
             </ul>
         </nav>
     </header>
-    <div id="code-box">
-        <label for="code-input">Code secret :</label>
-        <input type="text" id="code-input" placeholder="Code">
-        <button onclick="checkCode()">Valider</button>
-    </div>
     <section id="home">
         <h2>Bienvenue sur Recettes Américaines</h2>
         <p>Découvrez les meilleures recettes traditionnelles des États-Unis, des classiques du sud aux desserts décadents.</p>
     </section>
     <section id="recipes">
         <h2>Nos Recettes</h2>
-        <article>
-            <img src="https://assets.afcdn.com/story/20231005/2230784_w2000h1500c1cx1000cy667cxt0cyt0cxb2000cyb1333.jpg" alt="Mac and Cheese">
-            <div>
+        <div class="recipe" onclick="toggleDetails(this)">
+            <div class="recipe-header">
                 <h3>Mac and Cheese</h3>
+                <div>
+                    <span>Temps: 30 min</span> | 
+                    <span>Difficulté: 2/5</span>
+                </div>
+            </div>
+            <div class="recipe-details">
+                <img src="https://assets.afcdn.com/story/20231005/2230784_w2000h1500c1cx1000cy667cxt0cyt0cxb2000cyb1333.jpg" alt="Mac and Cheese">
                 <h4>Ingrédients :</h4>
                 <ul>
                     <li>200g de macaroni</li>
@@ -188,11 +118,17 @@
                     <li>Ajouter les macaroni cuits à la sauce au fromage, bien mélanger et servir chaud.</li>
                 </ol>
             </div>
-        </article>
-        <article>
-            <img src="https://www.inspiredtaste.net/wp-content/uploads/2022/11/Apple-Pie-Recipe-Video.jpg" alt="Apple Pie">
-            <div>
+        </div>
+        <div class="recipe" onclick="toggleDetails(this)">
+            <div class="recipe-header">
                 <h3>Apple Pie</h3>
+                <div>
+                    <span>Temps: 1h</span> | 
+                    <span>Difficulté: 3/5</span>
+                </div>
+            </div>
+            <div class="recipe-details">
+                <img src="https://www.inspiredtaste.net/wp-content/uploads/2022/11/Apple-Pie-Recipe-Video.jpg" alt="Apple Pie">
                 <h4>Ingrédients :</h4>
                 <ul>
                     <li>1 pâte brisée</li>
@@ -213,7 +149,7 @@
                     <li>Cuire au four pendant 45-50 minutes jusqu'à ce que la tarte soit dorée.</li>
                 </ol>
             </div>
-        </article>
+        </div>
     </section>
     <section id="about">
         <h2>À propos de nous</h2>
@@ -231,9 +167,6 @@
             <button type="submit">Envoyer</button>
         </form>
     </section>
-    <div class="btn-container">
-        <a href="index.html" class="btn">Retour à l'accueil</a>
-    </div>
     <div class="footer">
         &copy; 2024 Recettes Gourmandes
     </div>
