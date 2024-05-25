@@ -14,11 +14,44 @@
             color: #333;
         }
         header {
-            background-color: #d35400; /* Warm orange color */
+            background-color: #d35400;
             color: white;
-            padding: 10px 0;
+            padding: 20px 0;
             text-align: center;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+        header h1 {
+            font-family: 'Lobster', cursive;
+            font-size: 4em;
+            margin: 0;
+            background: linear-gradient(to right, #ff0000, #ffffff, #0000ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        header .flags {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        header .flags img {
+            width: 160px;
+            height: auto;
+            margin-right: 18px;
+            margin-top: 18px;
+        }
+        header .burger {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        header .burger img {
+            width: 120px;
+            height: auto;
+            margin-left: 13px;
+           
+        }
+        
         header nav ul {
             list-style-type: none;
             padding: 0;
@@ -151,6 +184,12 @@
 <body>
     <header>
         <h1>Recettes Américaines</h1>
+        <div class="burger">
+            <img src="https://img.icons8.com/color/452/hamburger.png" alt="Burger Icon">
+        </div>
+        <div class="flags">
+            <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="US Flag">
+        </div>
         <nav>
             <ul>
                 <li><a href="#home">Accueil</a></li>
