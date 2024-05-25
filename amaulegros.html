@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recettes Américaines</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: #fdf6e4; /* Light beige background color */
             color: #333;
         }
         header {
-            background-color: #4CAF50;
+            background-color: #d35400; /* Warm orange color */
             color: white;
             padding: 10px 0;
             text-align: center;
@@ -34,38 +35,54 @@
             padding: 20px;
             margin: 20px auto;
             width: 80%;
-            background-color: white;
+            background-color: #f7e4d3; /* Soft orange-beige background color */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 20px; /* Rounded corners */
+            transition: all 1s ease; /* Smooth transition */
         }
         section h2 {
-            border-bottom: 2px solid #4CAF50;
+            border-bottom: 2px solid #d35400; /* Warm orange color */
             padding-bottom: 10px;
+            font-family: 'Lobster', cursive;
         }
         .recipe {
             border: 1px solid #ddd;
             padding: 10px;
             margin-bottom: 10px;
             cursor: pointer;
+            border-radius: 15px; /* Rounded corners */
+            background-color: #fef5e6; /* Very light orange background color */
+            transition: all 1s ease; /* Smooth transition */
+        }
+        .recipe:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
         }
         .recipe-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
+        .recipe-header div {
+            font-family: 'Lobster', cursive;
+            font-size: 1.2em;
+            color: #e67e22; /* Orange color */
+        }
         .recipe-details {
             display: none;
             margin-top: 10px;
+            transition: all 1s ease; /* Smooth transition for details */
         }
         .recipe img {
             width: 200px;
             height: auto;
+            border-radius: 10px; /* Rounded corners for images */
         }
         .btn-container {
             text-align: center;
             margin-top: 40px;
         }
         .btn {
-            background-color: #4CAF50;
+            background-color: #d35400; /* Warm orange color */
             color: #fff;
             padding: 10px 20px;
             text-decoration: none;
@@ -74,10 +91,9 @@
             transition: background-color 0.3s ease;
         }
         .btn:hover {
-            background-color: #146616;
-		}
-			
-		#code-box {
+            background-color: #e67e22; /* Slightly lighter orange on hover */
+        }
+        #code-box {
             background-color: #fff;
             padding: 10px;
             border: 1px solid #ddd;
@@ -85,6 +101,9 @@
             width: 80%;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
+            border-radius: 15px; /* Rounded corners */
+            background-color: #fef5e6; /* Very light orange background color */
+            transition: all 1s ease; /* Smooth transition */
         }
         #code-box input {
             padding: 10px;
@@ -94,16 +113,20 @@
         }
         #code-box button {
             padding: 10px 20px;
-            background-color: #4CAF50;
+            background-color: #d35400;
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
         #code-box button:hover {
-            background-color: #146616;
+            background-color: #e67e22;
         }
-		
+        .stars {
+            color: gold;
+            font-size: 1.2em;
+        }
     </style>
     <script>
         function checkCode() {
@@ -114,8 +137,7 @@
                 alert("Code incorrect. Veuillez réessayer.");
             }
         }
-    </script>
-    <script>
+
         function toggleDetails(element) {
             var details = element.querySelector('.recipe-details');
             if (details.style.display === 'none' || details.style.display === '') {
@@ -149,7 +171,7 @@
                 <h3>Mac and Cheese</h3>
                 <div>
                     <span>Temps: 30 min</span> | 
-                    <span>Difficulté: 2/5</span>
+                    <span>Difficulté: <span class="stars">★★☆☆☆</span></span>
                 </div>
             </div>
             <div class="recipe-details">
@@ -178,7 +200,7 @@
                 <h3>Apple Pie</h3>
                 <div>
                     <span>Temps: 1h</span> | 
-                    <span>Difficulté: 3/5</span>
+                    <span>Difficulté: <span class="stars">★★★☆☆</span></span>
                 </div>
             </div>
             <div class="recipe-details">
